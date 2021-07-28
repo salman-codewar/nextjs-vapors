@@ -1,0 +1,50 @@
+{
+  "name": "nextjs-vapors",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "format": "prettier --write .",
+    "lint:fix": "npm run lint -- --fix",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "lint": "eslint './{src,pages,server}/**/*' --ext .tsx,.ts",
+    "check-types": "tsc --project tsconfig.json --pretty --noEmit",
+    "pretty": "prettier --write --config .prettierrc {src,pages,server}/**/*.{ts,tsx}",
+    "test-all": "npm run pretty && npm run check-lint && npm run check-types && npm run build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.26.11",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "husky": "^7.0.1",
+    "eslint": "7.31.0",
+    "prettier": "^1.19.1",
+    "css-loader": "^3.5.1",
+    "typescript": "^4.3.5",
+    "lint-staged": "^11.1.1",
+    "@types/node": "^16.4.5",
+    "@types/react": "^17.0.15",
+    "eslint-plugin-react": "7.x",
+    "eslint-config-next": "11.0.1",
+    "eslint-plugin-flowtype": "3.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-module": "^0.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest-dom": "^3.9.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react-hooks": "1.x",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-import-resolver-ts": "^0.4.2",
+    "@types/styled-components": "^4.1.19",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "eslint-import-resolver-typescript": "^1.1.1"
+  }
+}
