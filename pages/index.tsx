@@ -1,10 +1,16 @@
+import { VStack, Heading } from "@chakra-ui/react";
 import Head from "next/head";
 import Link from "next/link";
-import styled from "../styles/Home.module.css";
+import React from "react";
+import {
+    TitleStyle,
+    PageContainerStyle,
+    RootContainerStyle,
+} from "../styles/home";
 
 export default function Home() {
     return (
-        <div className={styled.container}>
+        <VStack {...RootContainerStyle}>
             <Head>
                 <title>NextJS Vapors</title>
                 <meta
@@ -14,12 +20,12 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styled.main}>
-                <h1 className={styled.title}>
+            <VStack {...PageContainerStyle}>
+                <Heading {...TitleStyle}>
                     Welcome to
                     <Link href="/"> NextJS Vapors!</Link>
-                </h1>
-            </main>
-        </div>
+                </Heading>
+            </VStack>
+        </VStack>
     );
 }
